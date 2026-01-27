@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vision Test</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+  <h1>👁️ Vision Test</h1>
+  <nav>
+    <a href="index.html">หน้าแรก</a> |
+    <a href="page1.html">วิธีใช้งาน</a> |
+    <a href="page2.html">ติดต่อ</a>
+  </nav>
+</header>
+
+<!-- ===== Calibration Section ===== -->
+<section id="calibration">
+  <h2>Calibration หน้าจอ</h2>
+  <p>วางบัตรประชาชนทับกรอบ แล้วเลื่อนจนขนาดพอดี</p>
+
+  <!-- กรอบบัตรประชาชน -->
+  <div id="card"></div>
+
+  <!-- แถบเลื่อนปรับขนาด -->
+  <input type="range" id="scale" min="50" max="150" value="100">
+  <br>
+
+  <!-- ปุ่มเริ่มทดสอบ -->
+  <button id="startTestBtn">เริ่มทดสอบสายตา</button>
+</section>
+<script src="script.js"></script>
+</body>
+</html>
