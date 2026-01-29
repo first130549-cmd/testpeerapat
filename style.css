@@ -148,3 +148,29 @@ button {
   font-size: 16px;
   margin-top: 10px;
 }
+
+/*ข้อมูลเฟิร์ส-แตงโม*/
+.contact {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+  text-align: center;
+}
+
+/* กล่องรวม */
+.contact-container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap; /* รองรับมือถือ */
+  margin-top: 20px;
+}
+
+/* การ์ดแต่ละคน */
+.contact-card {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  width: 280px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
