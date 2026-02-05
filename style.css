@@ -17,6 +17,18 @@ header h1 {
     margin: 0;
 }
 
+header h1.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-img {
+  width: 50px;
+  height: auto;
+}
+
+
 /* สวนพยาบาลเด้อ hero คือพยาบาล */
 .hero {
     display: flex;
@@ -123,6 +135,7 @@ footer {
 #calibration {
   text-align: center;
   padding: 20px;
+  overflow-x: hidden;
 }
 
 /* กรอบบัตรประชาชน */
@@ -130,8 +143,6 @@ footer {
   width: 85.6mm;
   height: 53.98mm;
   border: 2px solid #000;
-  margin: 20px auto;
-  transform-origin: center;
 }
 
 /* แถบเลื่อน */
@@ -140,6 +151,26 @@ input[type="range"] {
   max-width: 400px;
   padding: 8px;
   font-size: 16px;
+}
+
+.calibration-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center; 
+  margin: 30px 0;
+}
+
+.slider-panel {
+  position: absolute;
+  right: 20px;        /* ปรับระยะตามที่ชอบ */
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.slider-panel input[type="range"] {
+  height: 200px;
+  writing-mode: vertical-rl;
+  direction: rtl;
 }
 
 /* ปุ่ม */
