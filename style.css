@@ -140,8 +140,6 @@ footer {
 
 /* กรอบบัตรประชาชน */
 #card {
-  width: 85.6mm;
-  height: 53.98mm;
   border: 2px solid #000;
 }
 
@@ -204,4 +202,103 @@ button {
   border-radius: 10px;
   width: 280px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* =========================
+   Modal System (เพิ่มใหม่)
+   ========================= */
+
+.hidden {
+  display: none !important;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+
+  /* ยังไม่แสดงจนกว่าจะ add .show */
+  justify-content: center;
+  align-items: center;
+
+  z-index: 999;
+}
+
+.modal.show {
+  display: flex;
+}
+
+.modal-box {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  width: 90%;
+  max-width: 400px;
+}
+
+/* ===== Eye Modal Enhancement ===== */
+#eyeModal .modal-box {
+  max-width: 450px;
+}
+
+#eyeTitle {
+  font-size: 26px;
+  margin-bottom: 10px;
+}
+
+#eyeInstruction {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+/* ===== Test Layout ===== */
+
+#testSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  text-align: center;
+}
+
+#letterDisplay {
+  font-weight: normal;   /* ไม่หนา */
+  margin: 40px 0;
+}
+
+#answerButtons {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#answerButtons button {
+  font-weight: bold;     /* ตัวหนา */
+  font-size: 18px;
+  padding: 10px 18px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background-color: white;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+#answerButtons button:hover {
+  background-color: #4a90e2;
+  color: white;
+}
+
+#letterDisplay {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }

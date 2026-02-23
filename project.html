@@ -5,37 +5,99 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Vision Test</title>
 <link rel="stylesheet" href="style.css">
+<style>
+.hidden{display:none;}
+#card{
+  width:300px;
+  height:190px;
+  border:2px solid red;
+  margin:auto;
+  transform-origin:center;
+}
+#letterDisplay{
+  font-weight:normal;
+  margin:40px;
+}
+.modal{
+  position:fixed;
+  top:0;left:0;
+  width:100%;height:100%;
+  background:rgba(0,0,0,0.6);
+  justify-content:center;
+  align-items:center;
+  display:none;       /* ซ่อนปกติ */
+}
+
+.modal.show{
+  display:flex;       /* ค่อยแสดงตอนเรียก */
+}
+.modal-box{
+  background:white;
+  padding:30px;
+  border-radius:10px;
+  text-align:center;
+}
+button{
+  padding:10px 20px;
+  margin:10px;
+  cursor:pointer;
+}
+</style>
 </head>
 
 <body>
 
 <header>
-    <h1 class="logo">
-      <img src="img/S__2482182-removebg-preview.png" alt="Vision Test" class="logo-img">
-      <img src="img/S__2482179-removebg-preview.png" alt="Vision Test" class="logo-img">👁️ Vision Test</h1>
-    <nav><a href="index.html">หน้าแรก</a> | <a href="page1.html">วิธีใช้งาน</a> | <a href="page2.html">ติดต่อ</a></nav>
+<h1>👁️ Vision Test</h1>
 </header>
 
-<!-- ===== Calibration Section ===== -->
+<!-- ===== Calibration ===== -->
 <section id="calibration">
   <h2>Calibration หน้าจอ</h2>
-  <p>วางบัตรประชาชนทับกรอบ แล้วเลื่อนจนขนาดพอดี</p>
+  <p>วางบัตรประชาชนหรือบัตรเครดิต (กว้าง 85.6 mm) ทับกรอบ แล้วเลื่อนจนพอดี</p>
 
-  <!-- ครอบการ์ด + แถบเลื่อน -->
-  <div class="calibration-wrapper">
-    <!-- กรอบบัตรประชาชน -->
-    <div id="card"></div>
+  <div id="card"></div>
 
-    <!-- แถบเลื่อนปรับขนาด -->
-    <div class="slider-panel">
-      <input type="range" id="scale" min="50" max="150" value="100">
-    </div>
-  </div>
-
-  <button id="startTestBtn">เริ่มทดสอบสายตา</button>
+  <input type="range" id="scale" min="50" max="150" value="100">
+  <br>
+  <button id="startTestBtn">เสร็จสิ้น Calibration</button>
 </section>
 
-<script src="script.js"></script>
+<!-- ===== Distance Modal ===== -->
+<div id="distanceModal" class="modal hidden">
+  <div class="modal-box">
+    <h2>กรุณาถอยห่างจากหน้าจอ 2 เมตร</h2>
+    <p>ปิดตาข้างหนึ่งก่อนเริ่มทดสอบ</p>
+    <button id="beginTestBtn">เริ่มทดสอบ</button>
+  </div>
+</div>
 
+<!-- ===== Test Section ===== -->
+<section id="testSection" class="hidden">
+  <h2>แบบทดสอบสายตา</h2>
+  <div id="questionInfo"></div>
+  <div id="letterDisplay"></div>
+  <div id="answerButtons"></div>
+</section>
+
+<!-- ===== Result ===== -->
+<section id="resultSection" class="hidden">
+  <h2>ผลการทดสอบ</h2>
+  <div id="resultContent"></div>
+  <button onclick="location.reload()">ทดสอบใหม่</button>
+  <p style="font-size:12px;margin-top:20px">
+  *** ผลนี้เป็นการประเมินเบื้องต้น ไม่ใช่การวินิจฉัยทางการแพทย์ ***
+  </p>
+</section>
+
+<!-- ===== Eye Instruction Modal ===== -->
+<div id="eyeModal" class="modal hidden">
+  <div class="modal-box">
+    <h2 id="eyeTitle"></h2>
+    <p id="eyeInstruction"></p>
+    <button id="eyeStartBtn">เริ่มทดสอบ</button>
+  </div>
+</div>
+<script src="script.js"></script>
 </body>
 </html>
